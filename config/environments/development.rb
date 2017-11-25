@@ -38,4 +38,15 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+  config.action_mailer.default_url_options = { host: 'https://blocipedia1-sds0208.c9users.io' }
+    ActionMailer::Base.delivery_method = :smtp
+    ActionMailer::Base.smtp_settings = {
+        address:        'smtp.sendgrid.net',
+        port:           '2525',
+        authentication: :plain,
+        user_name:      ENV['SENDGRID_USERNAME'],
+        password:       ENV['SENDGRID_PASSWORD'],
+        domain:         'heroku.com',
+        enable_starttls_auto: true
+    }
 end
