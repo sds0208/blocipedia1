@@ -9,18 +9,22 @@
 </head>
 <body>
     <div class="container">
-        <ul class="nav nav-tabs">
-            <li><%= link_to "Home", welcome_index_path %></li>
-            <li><%= link_to "About", welcome_about_path %></li>
+        <ul class="nav nav-tabs nav-justified">
+            <li><%= link_to "Home", root_path %></li>
+            <li><%= link_to "About", about_path %></li>
             <% if user_signed_in? %>
-                <li class="navbar-text label-info">Signed in as: <strong><%= current_user.email %></strong></li>
-                <li class="pull-right"><%= link_to 'Edit profile', edit_user_registration_path %></li>
-                <li class="pull-right"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+                <li><%= link_to "My Wikis", wikis_path %></li>
+                <li><%= link_to "New Wiki", new_wiki_path %></li>
+                <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
+                <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
             <% else %>
-                <li class="pull-right"><%= link_to "Sign Up", new_user_registration_path %></li>
-                <li class="pull-right"><%= link_to "Sign In", new_user_session_path %></li>
+                <li><%= link_to "Sign Up", new_user_registration_path %></li>
+                <li><%= link_to "Sign In", new_user_session_path %></li>
             <% end %>
         </ul>
+        <% if user_signed_in? %>
+            <div class="label-info center-block">Signed in as: <strong><%= current_user.email %></strong></div>
+        <% end %>    
     </div>
     
 <%= yield %>

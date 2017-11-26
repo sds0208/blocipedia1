@@ -1,0 +1,6 @@
+<h1 class="center-block"><%= @wiki.title %></h1>
+<p class="center-block"><%= @wiki.body %></p>
+<div class="center-block">
+    <%= link_to "Edit", edit_wiki_path(@wiki), class: "btn btn-primary" %>
+    <%= link_to "Delete", @wiki, method: :delete, data: { confirm: 'Are you sure you want to delete this wiki?' }, class: "btn btn-danger" %>
+</div>
