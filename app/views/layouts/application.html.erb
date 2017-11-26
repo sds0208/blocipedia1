@@ -12,8 +12,8 @@
         <ul class="nav nav-tabs nav-justified">
             <li><%= link_to "Home", root_path %></li>
             <li><%= link_to "About", about_path %></li>
+            <li><%= link_to "Public Wikis", wikis_path %></li>
             <% if user_signed_in? %>
-                <li><%= link_to "My Wikis", wikis_path %></li>
                 <li><%= link_to "New Wiki", new_wiki_path %></li>
                 <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
                 <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>

@@ -1,6 +1,6 @@
-<h1 class="center-block">My Wikis</h1>
+<h1 class="center-block">Public Wikis</h1>
 <div class="container wiki-index">
-    <% @user.wikis.each do |wiki| %>
+    <% @wikis.each do |wiki| %>
         <div class="row">
             <div class="col-sm-5 divider"><%= link_to wiki.title, wiki %></div>
             <div class="col-sm-7">Author: <%= wiki.user.email %></div>

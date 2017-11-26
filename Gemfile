@@ -36,12 +36,15 @@
  
  gem 'thor', '0.19.1'
  
+ gem 'bootstrap-sass'
+ gem 'devise'
+ gem 'pundit'
+ 
  group :development do
    gem 'listen', '~> 3.0.5'
  end
  
-  gem 'bootstrap-sass'
-  gem 'devise'
+  
   
  group :development, :test do
    gem 'rspec-rails', '~> 3.0'
