@@ -39,6 +39,7 @@
  gem 'bootstrap-sass'
  gem 'devise'
  gem 'pundit'
+ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
  
  group :development do
    gem 'listen', '~> 3.0.5'
