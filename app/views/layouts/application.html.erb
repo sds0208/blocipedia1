@@ -23,7 +23,7 @@
             <% end %>
         </ul>
         <% if user_signed_in? %>
-            <div class="label-info center-block">Signed in as: <strong><%= current_user.email %></strong></div>
+            <div class="label-info center-block">Signed in as: <strong><%= current_user.email %></strong> - <%= current_user.role.capitalize %> User</div>
         <% end %>    
     </div>
     

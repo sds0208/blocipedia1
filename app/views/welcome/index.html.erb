@@ -7,13 +7,19 @@
 </div>  
 <div class="container center-block">    
     <div class="row">
-        <div class="col-sm-6">
-            <h3>Create public wikis!</h3>
-            <button class="btn-lg btn-primary">Free Plan</button>
-        </div>
-        <div class="col-sm-6">
-            <h3>Create private wikis!</h3>
-            <button class="btn-lg btn-primary">Premium Plan</button>
-        </div>
+            <div class="col-sm-6">
+                <h3>Create public wikis!</h3>
+                <%= link_to "Free Plan", edit_user_registration_path, class: 'btn-lg btn-primary' %>
+                <% if current_user && current_user.role == 'premium' %>
+                    <h5>(Downgrade Membership)</h5>
+                <% end %>    
+            </div>
+            <div class="col-sm-6">
+                <h3>Create private wikis!</h3>
+                <%= link_to "Premium Plan", new_charge_path, class: 'btn-lg btn-primary' %>
+                <% if current_user && current_user.role == 'standard' %>
+                    <h5>(Upgrade Membership)</h5>
+                <% end %>    
+            </div>
     </div>
 </div>   
