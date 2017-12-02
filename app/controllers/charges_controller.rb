@@ -37,7 +37,9 @@ class ChargesController < ApplicationController
     
     def downgrade
         current_user.role = 'standard'
+        current_user.wikis.each { |wiki| wiki.update_attributes(private: false) }
         current_user.save!
+        
         redirect_to root_path
     end
 end

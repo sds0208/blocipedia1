@@ -40,7 +40,7 @@
     <h3>Cancel my account</h3>
     
     <p>Unhappy? 
-    <%= button_to "Downgrade my account", downgrade_path, data: { confirm: "Are you sure?" }, method: :get %>
+    <%= button_to "Downgrade my account", downgrade_path, data: { confirm: "Are you sure? All of your private wikis will become public, and you will no longer be able to create private wikis." }, method: :get %>
     <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
     
     <%= link_to "Back", :back %>
