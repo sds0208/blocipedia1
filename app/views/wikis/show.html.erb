@@ -1,5 +1,5 @@
-<h1 class="center-block"><%= @wiki.title %></h1>
-<p class="center-block"><%= @wiki.body %></p>
+<h1 class="center-block"><%= markdown(@wiki.title) %></h1>
+<p class="center-block"><%= markdown(@wiki.body) %></p>
 <div class="center-block">
     <%= link_to "Edit", edit_wiki_path(@wiki), class: "btn btn-primary" %>
     <% if @wiki.user == current_user || current_user.role === 'admin' %>
