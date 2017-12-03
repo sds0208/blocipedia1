@@ -1,0 +1,9 @@
+<% if @wiki.private? %>
+
+    <%= form_for [wiki, Collaborator.new] do |f| %>
+        Enter collaborator email address
+        <%= f.text_field :user, class: 'form-control' %> 
+
+        <%= f.submit "Save Collaborator", class: 'btn btn-primary' %>
+    <% end %>
+<% end %>

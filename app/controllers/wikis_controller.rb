@@ -7,6 +7,7 @@ class WikisController < ApplicationController
     def show
         @wiki = Wiki.find(params[:id])
         @users = User.find_by(id: params[:id])
+        @collaborators = @wiki.collaborators
     end
     def new
         @wiki = Wiki.new
@@ -26,6 +27,7 @@ class WikisController < ApplicationController
     def edit
         @wiki = Wiki.find(params[:id])
         @users = User.find_by(id: params[:id])
+        
         
     end
     def update
