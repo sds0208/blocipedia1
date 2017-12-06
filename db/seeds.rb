@@ -17,6 +17,7 @@ admin = User.create!(
     role:     'admin'
 )
 
+
 puts "Seed finished"
 puts "#{User.count} users created"
 puts "#{Wiki.count} wikis created"

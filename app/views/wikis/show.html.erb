@@ -1,5 +1,10 @@
 <h1 class="center-block"><%= markdown(@wiki.title) %></h1>
 <p class="center-block"><%= markdown(@wiki.body) %></p>
+<% if @wiki.private? %>
+    <% @wiki.collaborators.each do |collaborator| %>
+        <h3>collaborator</h3>
+    <% end %>    
+<% end %>
 <div class="center-block">
     <%= link_to "Edit", edit_wiki_path(@wiki), class: "btn btn-primary" %>
     <% if @wiki.user == current_user || current_user.role === 'admin' %>
