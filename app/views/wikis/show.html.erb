@@ -1,8 +1,9 @@
 <h1 class="center-block"><%= markdown(@wiki.title) %></h1>
 <p class="center-block"><%= markdown(@wiki.body) %></p>
 <% if @wiki.private? %>
-    <% @wiki.collaborators.each do |collaborator| %>
-        <h3>collaborator</h3>
+    <h3>Collaborators</h3>
+    <% @wiki.users.each do |collaborator| %>
+        <h4><%= collaborator.email %></h4>
     <% end %>    
 <% end %>
 <div class="center-block">

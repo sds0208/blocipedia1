@@ -14,8 +14,10 @@
                 <%= f.label :private, class: 'checkbox' do %>
                     <%= f.check_box :private %> Private wiki
                 <% end %>
-                <%= f.label :collaborator %>
-                <%= f.text_field :collaborators %>
+                
+                    <%= text_field_tag :collaborators, @wiki.users.map(&:email).join(', ') %>
+
+               
             </div>
         <% end %>
         <%= f.submit "Save" %>

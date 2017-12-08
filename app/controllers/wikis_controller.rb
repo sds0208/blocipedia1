@@ -26,10 +26,13 @@ class WikisController < ApplicationController
         @wiki = Wiki.find(params[:id])
         @users = User.find_by(id: params[:id])
         
+        
     end
     def update
         @wiki = Wiki.find(params[:id])
         @wiki.assign_attributes(wiki_params)
+        emails = params[:collaborators].split(',').map(&:strip)
+        @wiki.users = User.where(email: emails)
       
         if @wiki.save
             flash[:notice] = "Wiki was updated."
