@@ -2,9 +2,9 @@
 <div class="container wiki-index">
     <% @wikis.each do |wiki| %>
         <% unless wiki.private? %>
-            <div class="row">
-                <div class="col-sm-5 divider"><%= link_to wiki.title, wiki %></div>
-                <div class="col-sm-7">Author: <%= wiki.user.email %></div>
+            <div class="row wiki-row">
+                <div class="col-sm-7 divider"><%= link_to wiki.title, wiki %></div>
+                <div class="col-sm-5">Author: <%= wiki.user.email %></div>
             </div>
         <% end %>    
     <% end %>    
@@ -14,7 +14,7 @@
     <div class="container wiki-index">
         <% @wikis.each do |wiki| %>
             <% if wiki.user == current_user && wiki.private? %>
-                <div class="row">
+                <div class="row wiki-row">
                     <div class="col-sm-5 divider"><%= link_to wiki.title, wiki %></div>
                     <div class="col-sm-7">Author: <%= wiki.user.email %></div>
                 </div>

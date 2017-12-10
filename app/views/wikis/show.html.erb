@@ -1,14 +1,16 @@
-<h1 class="center-block"><%= markdown(@wiki.title) %></h1>
-<p class="center-block"><%= markdown(@wiki.body) %></p>
-<% if @wiki.private? %>
-    <h3>Collaborators</h3>
-    <% @wiki.users.each do |collaborator| %>
-        <h4><%= collaborator.email %></h4>
-    <% end %>    
-<% end %>
 <div class="center-block">
-    <%= link_to "Edit", edit_wiki_path(@wiki), class: "btn btn-primary" %>
-    <% if @wiki.user == current_user || current_user.role === 'admin' %>
-        <%= link_to "Delete", @wiki, method: :delete, data: { confirm: 'Are you sure you want to delete this wiki?' }, class: "btn btn-danger" %>
+    <div class="jumbotron"><%= markdown(@wiki.title) %></div>
+    <div class="wiki-body"><%= markdown(@wiki.body) %></div>
+    <% if @wiki.private? %>
+        <h3 class="collaborator-title">Collaborators</h3>
+        <% @wiki.users.each do |collaborator| %>
+            <h5 class="collaborators"><%= collaborator.email %></h5>
+        <% end %>    
     <% end %>
+    <div class="buttons-div">
+        <%= link_to "Edit", edit_wiki_path(@wiki), class: "btn btn-primary" %>
+        <% if @wiki.user == current_user || current_user.role === 'admin' %>
+            <%= link_to "Delete", @wiki, method: :delete, data: { confirm: 'Are you sure you want to delete this wiki?' }, class: "btn btn-danger" %>
+        <% end %>
+    </div>
 </div>
