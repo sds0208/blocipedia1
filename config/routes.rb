@@ -8,8 +8,6 @@ Rails.application.routes.draw do
   
   get 'downgrade' => 'charges#downgrade'
   
-  post 'users' 
-  
   devise_for :users
 
   resources :wikis do
