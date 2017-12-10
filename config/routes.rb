@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   
   get 'downgrade' => 'charges#downgrade'
   
-  devise_for :users
+  devise_for :users, :controllers => {registrations: 'registrations'}
   
   resources :users
 
