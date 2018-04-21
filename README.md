@@ -4,6 +4,8 @@
 
 [Here is a link to the application](https://serene-dusk-49988.herokuapp.com/).
 
+![landing page](https://i.imgur.com/2DzSDll.png)
+
 ### Technologies used
 
 * Ruby on Rails
@@ -24,9 +26,15 @@ The first problem I had was learning how to use Devise for Authentication.
 
 While there is quite a bit of documentation available for Devise, I had no experience with it before starting the project, and it took some time to figure out how to get it working. It actually turned out to be more simple than expected, and I was able to get authentication in place without too  much trouble. The main thing that I had trouble with along the way was getting the development and production settings implemented correctly.
 
+![sign up](https://i.imgur.com/FkClqxE.png)
+
+![successful sign in](https://i.imgur.com/QvdT2sS.png)
+
+![edit user](https://i.imgur.com/uwjEudq.png)
+
 ### Problem
 
-The biggest problem I faced when making this application was figuring out how to create the collaborator model. For example, with the user, wiki, and collaborator models, which ones would belong to and which ones would have many of the others?
+The biggest problem I faced when making this application was figuring out how to create the collaborator model. For example, with the user, wiki, and collaborator models, which ones would belong to and which ones would have many of which?
 
 ### Solution
 
@@ -57,3 +65,8 @@ Overall, I am happy with how the application turned out. There are still a few m
 ### Conclusion
 
 Building an entire Ruby on Rails application on my own was a lot of fun, and I learned a lot in the process. 
+
+![new wiki](https://i.imgur.com/5K1ymEQ.png)
+
+![wikis](https://i.imgur.com/9YxKvKd.png)
+
